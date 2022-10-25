@@ -1,12 +1,15 @@
 import { Box } from '@mui/material'
 import React from 'react'
+import BodyPart from './BodyPart'
 
 
 type HorizontalScrollbarProps = {
     data: string[]
+    bodyPart: string
+    setBodyPart: React.Dispatch<React.SetStateAction<string>>
 }
 
-function HorizontalScrollbar({ data }: HorizontalScrollbarProps) {
+function HorizontalScrollbar({ data, bodyPart, setBodyPart }: HorizontalScrollbarProps) {
   return (
     <div>
       {data.map((item) => (
@@ -16,7 +19,11 @@ function HorizontalScrollbar({ data }: HorizontalScrollbarProps) {
           // title={item.id || item}
           m="0 40px"
         >
-          {item}
+          <BodyPart 
+            item={item} 
+            bodyPart={bodyPart}
+            setBodyPart={setBodyPart}
+          />
         </Box>
       ))}
     </div>
