@@ -4,9 +4,11 @@ import HeroBanner from '../components/HeroBanner'
 import SearchExercises from '../components/SearchExercises'
 import Exercises from '../components/Exercises'
 
+import { IExercise } from '../utils/fetchData'
+
 const Home = () => {
   const [ bodyPart, setBodyPart ] = useState('all')
-  const [ exercises, setExercises ] = useState<string[]>([])
+  const [ exercises, setExercises ] = useState<IExercise[]>([])
   return (
     <Box>
       <HeroBanner />

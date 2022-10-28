@@ -3,9 +3,11 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 import { exercisesOptions, fetchData } from '../utils/fetchData'
 import HorizontalScrollbar from './HorizontalScrollbar'
 
+import { IExercise } from '../utils/fetchData'
+
 type SearchExercisesProps = {
   bodyPart: string
-  setExercises: React.Dispatch<React.SetStateAction<string[]>>
+  setExercises: React.Dispatch<React.SetStateAction<IExercise[]>>
   setBodyPart: React.Dispatch<React.SetStateAction<string>>
 }
 
@@ -27,10 +29,10 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }: SearchExercise
 
   const handleSearch = async () => {
     if (search) {
-      const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exercisesOptions)
+      const exercisesData: IExercise[] = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exercisesOptions)
 
-      const searchedExercises = exercisesData.filter(
-        (exercise: any) => exercise.name.toLowerCase().includes(search) ||
+      const searchedExercises: IExercise[] = exercisesData.filter(
+        (exercise: IExercise) => exercise.name.toLowerCase().includes(search) ||
         exercise.target.toLowerCase().includes(search) ||
         exercise.equipment.toLowerCase().includes(search) ||
         exercise.bodyPart.toLowerCase().includes(search) 

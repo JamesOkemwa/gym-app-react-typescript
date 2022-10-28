@@ -1,3 +1,12 @@
+export interface IExercise  {
+  bodyPart: string
+  equipment: string
+  gifUrl: string
+  id: string
+  name: string
+  target: string
+}
+
 export const exercisesOptions = {
     method: 'GET',
     url: 'https://exercisedb.p.rapidapi.com/exercises/bodyPartList',
