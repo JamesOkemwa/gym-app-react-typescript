@@ -15,10 +15,10 @@ type HorizontalScrollbarProps = {
 
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
-  
+
   return (
     <Typography onClick={() => scrollPrev()} className="right-arrow">
-      <img src={LeftArrowIcon} alt="right-arrow" />
+      <img src={LeftArrowIcon} alt="left-arrow" />
     </Typography>
   );
 };
@@ -36,10 +36,10 @@ const RightArrow = () => {
 function HorizontalScrollbar({ data, bodyPart, setBodyPart }: HorizontalScrollbarProps) {
   return (
     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-      {data.map((item) => (
+      {data.map((item, idx) => (
         <Box
-          // key={item.id || item}
-          // itemId={item.id || item}
+          key={idx}
+          // itemId={idx}
           // title={item.id || item}
           m="0 40px"
         >
