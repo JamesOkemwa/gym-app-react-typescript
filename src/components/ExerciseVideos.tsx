@@ -23,7 +23,7 @@ const ExerciseVideos = ({name, exerciseVideos }: ExerciseVideosProps) => {
           gap: { lg: '110px', xs: '0'}
         }}
       >
-        {exerciseVideos?.slice(1, 4).map((item:IExerciseVideo, index: number) => (
+        {exerciseVideos?.slice(0, 4).map((item:IExerciseVideo, index: number) => (
           <a 
             key={index} 
             className="exercise-video"

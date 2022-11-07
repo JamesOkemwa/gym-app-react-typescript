@@ -1,6 +1,11 @@
 import React from 'react'
 
-const SimilarExercises = () => {
+type SimilarExercisesProps = {
+  targetMuscleExercises: any[]
+  equipmentExercises: any[]
+}
+
+const SimilarExercises = ({targetMuscleExercises, equipmentExercises}: SimilarExercisesProps) => {
   return (
     <div>SimilarExercises</div>
   )
