@@ -57,10 +57,10 @@ height: 742px;
 position: absolute;
 right: 40px;
 top: 0px;
-width: 700px;
-height: 900px;
+width: 500px;
+height: 750px;
 margin-top: -330px;
-
+border-bottom-left-radius: 50px;
 }
 
 .exercise-card {
